@@ -21,6 +21,8 @@ It includes:
 - **Kops** → Creates and manages the Kubernetes cluster on AWS
 - **Kubernetes** → Orchestrates containers
 - **Helm** → Manages deployment as reusable charts
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4620838c-d72b-4ed2-9fa6-351212c29da0" />
+
 - **DockerHub** → Hosts container images
 - **AWS LoadBalancer (Classic ELB)** → Exposes frontend publicly
 - **EC2 instances** → Run the control plane and worker nodes
