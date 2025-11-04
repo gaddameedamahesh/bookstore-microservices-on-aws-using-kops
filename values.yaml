@@ -1,0 +1,29 @@
+namespace: bookstore
+
+mysql:
+  image: mysql:8
+  storage: 1Gi
+  rootPassword: "mypassword"
+  database: "booksdb"
+  user: "bookuser"
+  password: "bookpass"
+
+backend:
+  image: maheshg123/santa123:latest
+  replicas: 2
+  port: 8080
+
+frontend:
+  image: maheshg123/santa123:latest
+  replicas: 2
+  port: 80
+
+ingress:
+  host: bookstore.example.com
+
+monitoring:
+  image: prom/node-exporter
+
+backup:
+  schedule: "0 2 * * *"
+
