@@ -1,0 +1,20 @@
+Deployment Steps
+
+### 1️⃣ Create Kubernetes Cluster using Kops
+```bash
+kops create cluster --name=mahesh.k8s.local --state=s3://<your-s3-bucket> --zones=us-east-1a --node-count=2 --node-size=t2.medium --master-size=t2.medium --dns-zone=mahesh.k8s.local
+kops update cluster --name mahesh.k8s.local --yes
+2️⃣ Verify Cluster
+kubectl get nodes
+3️⃣ Create Namespace
+kubectl create namespace bookstore
+4️⃣ Deploy Application using Helm
+cd bookstore-chart
+helm install bookstore ./ --namespace bookstore
+5️⃣ Verify Resources
+kubectl get all -n bookstore
+6️⃣ Get LoadBalancer URL
+kubectl get svc frontend -n bookstore
+Open in browser:
+
+http://<loadbalancer-dns>
