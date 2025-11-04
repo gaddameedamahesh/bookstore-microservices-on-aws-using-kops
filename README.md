@@ -28,5 +28,3 @@ It includes:
 - **EC2 instances** → Run the control plane and worker nodes
 
 ---
-
-## 🗂️ Project Structure
